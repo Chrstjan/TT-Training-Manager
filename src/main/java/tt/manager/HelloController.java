@@ -1,4 +1,4 @@
-package tt.manager.tttrainingmanager;
+package tt.manager;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

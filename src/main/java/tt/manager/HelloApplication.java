@@ -1,4 +1,4 @@
-package tt.manager.tttrainingmanager;
+package tt.manager;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

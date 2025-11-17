@@ -3,6 +3,6 @@ module tt.manager.tttrainingmanager {
     requires javafx.fxml;
 
 
-    opens tt.manager.tttrainingmanager to javafx.fxml;
-    exports tt.manager.tttrainingmanager;
+    opens tt.manager to javafx.fxml;
+    exports tt.manager;
 }
