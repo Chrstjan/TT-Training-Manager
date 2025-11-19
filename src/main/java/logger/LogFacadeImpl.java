@@ -30,10 +30,21 @@ public class LogFacadeImpl implements LogFacade {
     @Override
     public void trace(String format, Object... args) {
         slf4jLogger.trace(format, args);
+
     }
 
     @Override
     public void trace(String message, Throwable t) {
         slf4jLogger.trace(message, t);
+    }
+
+    @Override
+    public void debug(String message) {
+        slf4jLogger.debug(message);
+    }
+
+    @Override
+    public void debug(String format, Object arg) {
+        slf4jLogger.debug(format, arg);
     }
 }
