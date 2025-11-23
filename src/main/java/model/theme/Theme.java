@@ -26,6 +26,11 @@ public class Theme {
         public static final Color TXT_MEDIUM = hexToColor("#555555");
         public static final Color TXT_LIGHT = hexToColor("#666666");
         public static final Color TXT_LIGHTER = hexToColor("#777777");
+
+        //Components
+        public static final Color UNIT_BG = hexToColor("#f9f9f9");
+        public static final Color EXERCISE_BG = hexToColor("#ffffff");
+        public static final Color SEPERATOR = hexToColor("#e0e0e0");
     }
 
     /*
