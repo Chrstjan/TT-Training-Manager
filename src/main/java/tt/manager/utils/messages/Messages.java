@@ -1,5 +1,10 @@
 package tt.manager.utils.messages;
 
+/**
+ * Util class that provides methods for retrieving different message types (UI, error messages,
+ * log messages)
+ * with formatting
+ */*/
 public class Messages {
     private static final LogFacade log;
     private static final Properties PROPERTIES = new Properties();
@@ -95,5 +100,71 @@ public class Messages {
             log.error("Failed to format key message", key, pattern, e);
             return "!" + key + "!";
         }
+    }
+
+    /**
+     * Gets an error message of the specified type and formats it.
+     *
+     * @param errorType The type of error (general, plan, ...)
+     * @param name The name of the error
+     * @param args The arguments to be formatted into the message
+     * @return The formatted message
+     */*/
+    public static String getErrorMessage(String errorType, String name, Object... args) {
+        return getString("error." + errorType + "." + name, args);
+    }
+
+    /**
+     *
+     * @param key The key for the error message (without including the "error" prefix)
+     * @param t The throwabæe for containing error details
+     * @return The formatted message + the exception message
+     */*/
+    public static String getFormattedError(String key, Throwable t) {
+        return getString("error." + key, t.getMessage());
+    }
+
+    /**
+     * Gets a log message from the specified log type and formats it.
+     *
+     * @param logType The type of log message (debug, error, warning, ...)
+     * @param name The name of the log message
+     * @param args The arguments to be formatted into the message
+     * @return The formatted message
+     */*/
+    public static String getLogMessage(String logType, String name, Object... args) {
+        return getString("log." + logType + "." + name, args);
+    }
+
+    /**
+     * Gets a debug message log and formats it
+     *
+     * @param name The name of the debug log message
+     * @param args The arguments to be formatted into the log message
+     * @return The formatted debug message log
+     */*/
+    public static String getDebugLog(String name, Object... args) {
+        return getLogMessage("debug", name, args);
+    }
+
+    /**
+     * Gets a error messag log and formats it.
+     *
+     * @param name The name of the error log message
+     * @param args The arguments to be formatted into the log message
+     * @return The formatted error message log
+     */*/
+    public static String getErrorLog(String name, Object... args) {
+        return getLogMessage("error", name, args);
+    }
+
+    /**
+     * Gets a resource path for the given resource type.
+     *
+     * @param type The type of resource (css, fxml, ...)
+     * @return The path to the specified resource
+     */*/
+    public static String getResourcePath(String type) {
+        return getString("path." + type + ".fxml");
     }
 }
