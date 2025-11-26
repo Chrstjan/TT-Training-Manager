@@ -1,5 +1,10 @@
 package tt.manager.views;
 
+import javafx.fxml.FXMLLoader;
+
+import java.net.URL;
+import java.text.MessageFormat;
+
 public class ViewLoader {
     private final Injector injector;
 

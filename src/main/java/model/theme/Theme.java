@@ -1,4 +1,4 @@
-package model.theme
+package model.theme;
 
 import java.awt.Color;
 
